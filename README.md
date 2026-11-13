@@ -45,14 +45,14 @@ Program could search for given address or search for any valid WIF with a given 
 How to use it
 -------------
 
-In my examples I will use WIF _5KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKSmnqY_
+In my examples I will use WIF _[REDACTED: WIF private key]_
 which produces address _19NzcPZvZMSNQk8sDbSiyjeKpEVpaS1212_
-The expected private key is: _c59cb0997ad73f7bf8621b1955caf80b304ded0a48e5b8f28c7b8f9356ec35e5_
+The expected private key is: _[REDACTED: private key data]_
     
-Let's assume we have WIF with 5 missing characters _5KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK?????KKKSmnqY_
+Let's assume we have WIF with 5 missing characters _[REDACTED: WIF example]_
 We must replace unknown characters by minimal characters from base58 encoding, to produce our starting key.
-WIF _5KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK11111KKKSmnqY_ could be decoded to:
-80c59cb0997ad73f7bf8621b1955caf80b304ded0a48e5b8f28c7b89f466ff5f68e2677283
+WIF _[REDACTED: WIF private key]_ could be decoded to:
+[REDACTED: private key data]
 
 In our calculations we need full decoded value, not only private key part.
 The same way we may calculate maximum (end of range) for key processing - replacing unknown characters with 'z'.
@@ -63,22 +63,22 @@ In our case the first missing character is on 9th position from right side, so o
 
 We may launch program with parameters:
 
-    -stride 7479027ea100 -u -rangeStart 80c59cb0997ad73f7bf8621b1955caf80b304ded0a48e5b8f28c7b89f466ff5f68e2677283  -a 19NzcPZvZMSNQk8sDbSiyjeKpEVpaS1212
+    -stride 7479027ea100 -u -rangeStart [REDACTED: private key data]  -a 19NzcPZvZMSNQk8sDbSiyjeKpEVpaS1212
 
 Solver for described example is based on fact that stride modifies decoded checksum. Program verifies checksum (2*sha256) and only valid WIFs are checked agains expected address (pubkey->hashes->address).
     
-Similar test for compressed WIF (target _KzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWK7YY3s_):
+Similar test for compressed WIF (target _[REDACTED: WIF private key]_):
 
-    -stride 7479027ea100 -c -rangeStart 8070cfa0d40309798a5bd144a396478b5b5ae3305b7413601b18767654f1108a02787692623a  -a 1PzaLTZS3J3HqGfsa8Z2jfkCT1QpSMVunD
+    -stride 7479027ea100 -c -rangeStart [REDACTED: private key data]  -a 1PzaLTZS3J3HqGfsa8Z2jfkCT1QpSMVunD
    
 For other of examples please see the file /docs/examples.txt. 
 It is also possible to use parameters -wifStart and -wifEnd for defining ranges.    
     
-    -stride 7479027ea100 -u -wifStart 5KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK11111KKKSmnqY -a 19NzcPZvZMSNQk8sDbSiyjeKpEVpaS1212
+    -stride 7479027ea100 -u -wifStart [REDACTED: WIF private key] -a 19NzcPZvZMSNQk8sDbSiyjeKpEVpaS1212
    
 or test for compressed, with start&end ranges:
     
-    -c -wifStart L5KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK1111111KKKJsczi8wg -stride 15ac264554f032800 -wifEnd L5KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKzzzzzzzKKKJsczi8wg -a 1M9JqAMbCBwtvNLedwNG4TjiPsxATJrvxq
+    -c -wifStart [REDACTED: WIF private key] -stride 15ac264554f032800 -wifEnd [REDACTED: WIF private key] -a 1M9JqAMbCBwtvNLedwNG4TjiPsxATJrvxq
    
 
 
@@ -124,3 +124,11 @@ Contact
 Contact email: pawgo@protonmail.com
 If you found this program useful, consider making a donation, I will appreciate it! 
 **BTC**: `bc1qz2akvlch75rqdfg8pv7chqvz3m8jsl49k0kszc`
+
+## Support this project
+
+<p align="center">
+  <a href="https://buymeacoffee.com/ufodia">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee" height="60">
+  </a>
+</p>
